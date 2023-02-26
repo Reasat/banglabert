@@ -442,9 +442,9 @@ def main():
 
 #         trainer.save_model()
 
-        trainer.log_metrics("train", metrics)
-        trainer.save_metrics("train", metrics)
-        trainer.save_state()
+#         trainer.log_metrics("train", metrics)
+#         trainer.save_metrics("train", metrics)
+#         trainer.save_state()
 
     # Evaluation
     if training_args.do_eval:
@@ -457,8 +457,8 @@ def main():
         )
         metrics["eval_samples"] = min(max_eval_samples, len(eval_dataset))
 
-        trainer.log_metrics("eval", metrics)
-        trainer.save_metrics("eval", metrics)
+#         trainer.log_metrics("eval", metrics)
+#         trainer.save_metrics("eval", metrics)
 
     if training_args.do_predict:
         logger.info("*** Predict ***")
@@ -472,8 +472,8 @@ def main():
             for prediction, label in zip(predictions, labels)
         ]
 
-        trainer.log_metrics("predict", metrics)
-        trainer.save_metrics("predict", metrics)
+#         trainer.log_metrics("predict", metrics)
+#         trainer.save_metrics("predict", metrics)
 
         # Save predictions
         output_predictions_file = os.path.join(training_args.output_dir, "predictions.txt")
